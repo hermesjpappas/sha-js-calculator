@@ -14,7 +14,7 @@ function divide (a, b) {
     return a / b;
 }
 
-//If the operators used are the same as the JS operators
+//Since we can just return a + b, a - b, etc
 //there is no need for the separate operation functions
 //Maybe simplify?
 
