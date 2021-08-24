@@ -14,6 +14,10 @@ function divide (a, b) {
     return a / b;
 }
 
+//If the operators used are the same as the JS operators
+//there is no need for the separate operation functions
+//Maybe simplify?
+
 function operate(a, b, operator) {
     switch(operator) {
         case "+":
