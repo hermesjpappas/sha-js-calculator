@@ -23,7 +23,7 @@ function operate(a, b, operator) {
         case "*":
             return multiply(a, b);
         case "/":
-            return divide (a, b);
+            return divide(a, b);
         default:
             break;
     }
