@@ -19,6 +19,9 @@ function divide (a, b) {
 //Maybe simplify?
 
 function operate(a, b, operator) {
+    a = parseFloat(a);
+    b = parseFloat(b);
+
     switch(operator) {
         case "+":
             return add(a, b);
@@ -37,6 +40,8 @@ const display = document.querySelector(".display");
 const displayItems = document.querySelectorAll(".d-item");
 let content = "";
 let result = "";
+let firstNum = "";
+let secondNum = "";
 
 displayItems.forEach(dItem => {
     dItem.addEventListener('click', (e) => {
@@ -55,3 +60,19 @@ const clearButton = document.querySelector(".clear");
 clearButton.addEventListener('click', (e) => clear());
 
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
+
+
+const operators = document.querySelectorAll(".operator");
+
+operators.forEach(operator => {
+    operator.addEventListener('click', (e) => {
+        //TODO: If previous calculation was there
+        //without pressing the = button, calculate
+        //that first
+        firstNum = content;
+        content += operator.textContent;
+        display.textContent = content;
+        
+        
+    });
+});
