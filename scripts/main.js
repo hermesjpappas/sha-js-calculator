@@ -40,8 +40,7 @@ const display = document.querySelector(".display");
 const displayItems = document.querySelectorAll(".d-item");
 let content = "";
 let result = "";
-let firstNum = "";
-let secondNum = "";
+let calculated = false;
 
 displayItems.forEach(dItem => {
     dItem.addEventListener('click', (e) => {
