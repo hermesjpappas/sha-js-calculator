@@ -61,6 +61,18 @@ clearButton.addEventListener('click', (e) => clear());
 
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
 
+function isValid(equation) {
+    //match one or more numbers followed by zero or more decimal points
+    //followed by zero or more numbers, then repeat after an operator
+    return /^\d+\.*\d*[\+\-\/\*]\d+\.*\d*$/.test(equation);
+}
+
+function evaluate(equation) {
+    //if isValid(equation)...
+
+}
+
+
 
 const operators = document.querySelectorAll(".operator");
 
@@ -69,10 +81,7 @@ operators.forEach(operator => {
         //TODO: If previous calculation was there
         //without pressing the = button, calculate
         //that first
-        firstNum = content;
         content += operator.textContent;
         display.textContent = content;
-        
-        
     });
 });
