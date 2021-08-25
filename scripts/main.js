@@ -33,3 +33,15 @@ function operate(a, b, operator) {
     }
 }
 
+const display = document.querySelector(".display");
+const displayItems = document.querySelectorAll(".d-item");
+let content = "";
+let result = "";
+
+displayItems.forEach(dItem => {
+    dItem.addEventListener('click', (e) => {
+        content += dItem.textContent;
+        display.textContent = content;
+    });
+});
+
