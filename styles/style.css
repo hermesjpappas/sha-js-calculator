@@ -13,16 +13,17 @@ body {
     width: 100vw;
     text-align: center;
     font-family: 'Monoid Normal';
+    font-size: 16px;
 }
 
 main {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 600px;
-    height: 800px;
+    width: 700px;
+    height: 900px;
     border: solid 2px gray;
-    margin: -400px 0 0 -300px;
+    margin: -450px 0 0 -350px;
 }
 
 #calc-container {
@@ -30,13 +31,13 @@ main {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 400px;
-    height: 600px;
+    width: 500px;
+    height: 700px;
     border: solid 2px white;
-    margin: -300px 0 0 -200px;
+    margin: -350px 0 0 -250px;
 }
 
-#calc-container {
-    display: grid;
+h1 {
+    font-size: 3em;
+    margin-top: 0.5em;
 }
-
