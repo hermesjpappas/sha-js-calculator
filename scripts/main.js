@@ -64,7 +64,9 @@ function isValid(equation) {
 }
 
 function evaluate(equation) {
-    //if isValid(equation)...
+    if isValid(equation) {
+        //extract two numbers and operator, then operate(a,b,operator)
+    }
 
 }
 
