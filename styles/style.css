@@ -65,8 +65,18 @@ h1 {
     text-align: center;
     line-height: 200px;
     background-color: #111111;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .num {
     font-weight: bold;
+}
+
+.bottom-left {
+    border-bottom-left-radius: 10px;
+}
+
+.bottom-right {
+    border-bottom-right-radius: 10px;
 }
