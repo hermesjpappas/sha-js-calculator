@@ -72,6 +72,7 @@ h1 {
     background-color: #111111;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    cursor:initial;
 }
 
 .num {
