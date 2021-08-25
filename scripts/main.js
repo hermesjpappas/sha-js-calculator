@@ -47,10 +47,12 @@ displayItems.forEach(dItem => {
 
 const clearButtons = document.querySelectorAll(".clear");
 
+function clear() {
+    content = "";
+    result = "";
+    display.textContent = "";
+}
+
 clearButtons.forEach(cButton => {
-    cButton.addEventListener('click', (e) => {
-        content = "";
-        result = "";
-        display.textContent = "";
-    });
+    cButton.addEventListener('click', (e) => {clear()});
 });
