@@ -45,3 +45,12 @@ displayItems.forEach(dItem => {
     });
 });
 
+const clearButtons = document.querySelectorAll(".clear");
+
+clearButtons.forEach(cButton => {
+    cButton.addEventListener('click', (e) => {
+        content = "";
+        result = "";
+        display.textContent = "";
+    });
+});
