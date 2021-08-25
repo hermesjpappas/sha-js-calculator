@@ -51,7 +51,7 @@ function clear() {
     display.textContent = "";
 }
 
-const clearButton = document.querySelectorAll(".clear");
-cButton.addEventListener('click', (e) => clear());
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener('click', (e) => clear());
 
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
