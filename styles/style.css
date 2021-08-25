@@ -1,0 +1,33 @@
+body {
+    background-color: #222222;
+    color: #f4f4f4;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 600px;
+    height: 800px;
+    border: solid 2px gray;
+    margin: -400px 0 0 -300px;
+}
+
+#calc-container {
+    display: grid;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 600px;
+    border: solid 2px white;
+    margin: -300px 0 0 -200px;
+}
+
+#calc-container {
+    display: grid;
+}
+
