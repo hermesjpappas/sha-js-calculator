@@ -5,6 +5,10 @@
     src: local('Monoid Normal'), url('Monoid.woff') format('woff');
 }
 
+:root {
+    --border-radius: 15px;
+}
+
 
 body {
     background-color: #222222;
@@ -22,7 +26,7 @@ main {
     top: 50%;
     width: 700px;
     height: 900px;
-    border: solid 2px gray;
+    /* border: solid 2px gray; */
     margin: -450px 0 0 -350px;
 }
 
@@ -36,7 +40,7 @@ main {
     width: 500px;
     height: 700px;
     border: solid 4px white;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     margin: -350px 0 0 -250px;
 }
 
@@ -65,8 +69,8 @@ h1 {
     text-align: center;
     line-height: 200px;
     background-color: #111111;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
 
 .num {
@@ -74,9 +78,9 @@ h1 {
 }
 
 .bottom-left {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: var(--border-radius);
 }
 
 .bottom-right {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: var(--border-radius);
 }
