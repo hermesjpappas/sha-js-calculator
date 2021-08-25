@@ -66,6 +66,8 @@ function isValid(equation) {
 function evaluate(equation) {
     if isValid(equation) {
         //extract two numbers and operator, then operate(a,b,operator)
+        //and put the result as the display.textContent
+        //then set flag to calculated
     }
 
 }
@@ -80,6 +82,8 @@ operators.forEach(operator => {
         //without pressing the = button, calculate
         //that first
         //if(isValid(display.textContent)) evaluate(display.textContent);
+        //else if already calculated, set the flag to false and add?
+        //I need some rest. lol
         display.textContent += operator.textContent;
     });
 });
