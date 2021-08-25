@@ -45,14 +45,13 @@ displayItems.forEach(dItem => {
     });
 });
 
-const clearButtons = document.querySelectorAll(".clear");
-
 function clear() {
     content = "";
     result = "";
     display.textContent = "";
 }
 
-clearButtons.forEach(cButton => {
-    cButton.addEventListener('click', (e) => {clear()});
-});
+const clearButton = document.querySelectorAll(".clear");
+cButton.addEventListener('click', (e) => clear());
+
+//TO-DO: (Maybe) Implement Clear Entry function and event listener
