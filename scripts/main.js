@@ -64,7 +64,7 @@ function isValid(equation) {
 }
 
 function evaluate(equation) {
-    if isValid(equation) {
+    if(isValid(equation)) {
         //extract two numbers and operator, then operate(a,b,operator)
         //and put the result as the display.textContent
         //then set flag to calculated
