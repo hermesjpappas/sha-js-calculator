@@ -87,3 +87,6 @@ operators.forEach(operator => {
         display.textContent += operator.textContent;
     });
 });
+
+const equals = document.querySelector(".equals");
+equals.addEventListener('click', (e) => evaluate(display.textContent));
