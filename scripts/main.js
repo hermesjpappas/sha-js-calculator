@@ -38,19 +38,16 @@ function operate(a, b, operator) {
 
 const display = document.querySelector(".display");
 const displayItems = document.querySelectorAll(".d-item");
-let content = "";
 let result = "";
 let calculated = false;
 
 displayItems.forEach(dItem => {
     dItem.addEventListener('click', (e) => {
-        content += dItem.textContent;
-        display.textContent = content;
+        display.textContent += dItem.textContent;
     });
 });
 
 function clear() {
-    content = "";
     result = "";
     display.textContent = "";
 }
@@ -80,7 +77,7 @@ operators.forEach(operator => {
         //TODO: If previous calculation was there
         //without pressing the = button, calculate
         //that first
-        content += operator.textContent;
-        display.textContent = content;
+        //if(isValid(display.textContent)) evaluate(display.textContent);
+        display.textContent += operator.textContent;
     });
 });
