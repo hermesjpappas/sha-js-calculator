@@ -63,6 +63,7 @@ const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
     //behavior if dots or numbers are before
     if(display.textContent.charAt(display.textContent.length-1)==".") return;
+    if(/^\d+\.\d+$/.test(display.textContent)) return;
     display.textContent += ".";
 });
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
