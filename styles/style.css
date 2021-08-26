@@ -43,6 +43,7 @@ main {
     border: solid 4px #f4f4f4;
     border-radius: var(--border-radius);
     margin: -350px 0 0 -250px;
+    box-shadow: 10px 10px 5px #111111;
 }
 
 h1 {
