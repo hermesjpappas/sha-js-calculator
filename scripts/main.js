@@ -117,3 +117,9 @@ operators.forEach(operator => {
 
 const equals = document.querySelector(".equals");
 equals.addEventListener('click', (e) => evaluate());
+
+
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener('click', (e) => {
+    display.textContent = display.textContent.slice(0,display.textContent.length-1);
+});
