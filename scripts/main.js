@@ -105,10 +105,10 @@ const operators = document.querySelectorAll(".operator");
 
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
+        //if there's already a full valid operation on screen, evaluate it
         if(isValid()) evaluate();
-        if(calculated) {
-            calculated = false;
-        }
+        //if it's already calculated from before, keep the result, operate
+        if(calculated) calculated = false;
         display.textContent += operator.textContent;
     });
 });
