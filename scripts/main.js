@@ -90,7 +90,12 @@ function evaluate() {
         let second = display.textContent.match(/\d+\.?\d*/g)[1];
         let operator = display.textContent.match(/[\+\-\/\*]/)[0];
         result = operate(first,second,operator);
-        display.textContent = result.toFixed(3);
+      
+        //if the number has more than two decimal points, shorten it
+        if(result % 1 !== 0 && String(result).split('.')[1].length > 2) {
+            result = result.toFixed(3);
+        }
+        display.textContent = result;
         calculated = true;
     }
 
