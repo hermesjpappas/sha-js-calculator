@@ -90,7 +90,7 @@ function evaluate() {
         let second = display.textContent.match(/\d+\.?\d*/g)[1];
         let operator = display.textContent.match(/[\+\-\/\*]/)[0];
         result = operate(first,second,operator);
-        display.textContent = result;
+        display.textContent = result.toFixed(3);
         calculated = true;
     }
 
