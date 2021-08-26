@@ -37,24 +37,33 @@ function operate(a, b, operator) {
 }
 
 const display = document.querySelector(".display");
-const displayItems = document.querySelectorAll(".d-item");
+const nums = document.querySelectorAll(".num");
 let result = "";
 let calculated = false;
-
-displayItems.forEach(dItem => {
-    dItem.addEventListener('click', (e) => {
-        display.textContent += dItem.textContent;
-    });
-});
 
 function clear() {
     result = "";
     display.textContent = "";
 }
 
+nums.forEach(num => {
+    num.addEventListener('click', (e) => {
+        if(calculated) {
+            clear();
+            calculated = false;
+        }
+        display.textContent += num.textContent;
+    });
+});
+
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener('click', (e) => clear());
 
+const dot = document.querySelector(".dot");
+dot.addEventListener('click', (e) => {
+    //behavior if dots or numbers are before
+    display.textContent += ".";
+});
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
 
 function isValid() {
