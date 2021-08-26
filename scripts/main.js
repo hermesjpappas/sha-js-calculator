@@ -101,12 +101,10 @@ const operators = document.querySelectorAll(".operator");
 
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
-        //TODO: If previous calculation was there
-        //without pressing the = button, calculate
-        //that first
-        //if(isValid()) evaluate();
-        //else if already calculated, set the flag to false and add?
-        //I need some rest. lol
+        if(isValid()) evaluate();
+        if(calculated) {
+            calculated = false;
+        }
         display.textContent += operator.textContent;
     });
 });
