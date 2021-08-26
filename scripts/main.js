@@ -57,14 +57,14 @@ clearButton.addEventListener('click', (e) => clear());
 
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
 
-function isValid(equation) {
+function isValid() {
     //match one or more numbers followed by zero or more decimal points
     //followed by zero or more numbers, then repeat after an operator
-    return /^\d+\.*\d*[\+\-\/\*]\d+\.*\d*$/.test(equation);
+    return /^\d+\.*\d*[\+\-\/\*]\d+\.*\d*$/.test(display.textContent);
 }
 
-function evaluate(equation) {
-    if(isValid(equation)) {
+function evaluate() {
+    if(isValid()) {
         //extract two numbers and operator, then operate(a,b,operator)
         //and put the result as the display.textContent
         //then set flag to calculated
@@ -81,7 +81,7 @@ operators.forEach(operator => {
         //TODO: If previous calculation was there
         //without pressing the = button, calculate
         //that first
-        //if(isValid(display.textContent)) evaluate(display.textContent);
+        //if(isValid()) evaluate();
         //else if already calculated, set the flag to false and add?
         //I need some rest. lol
         display.textContent += operator.textContent;
