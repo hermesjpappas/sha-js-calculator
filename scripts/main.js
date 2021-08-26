@@ -65,6 +65,8 @@ clearButton.addEventListener('click', (e) => clear());
 
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
+    //if there is nothing, don't add a decimal point
+    if(display.textContent === "") return;
     //if the result is already calculated, don't add a decimal to it
     if(calculated) return;
     //if there is a decimal point already in this number, don't add another one
