@@ -70,7 +70,7 @@ dot.addEventListener('click', (e) => {
     if(/^\d+\.\d+$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
     //return and also do nothing
-    if(/^\d+\.*\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
+    if(/^\d+\.\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
     //otherwise, just add the decimal point
     display.textContent += ".";
 });
@@ -78,17 +78,18 @@ dot.addEventListener('click', (e) => {
 
 //TO-DO: (Maybe) Implement Clear Entry function and event listener
 
+//checks if the equation on display is valid
 function isValid() {
     //match one or more numbers followed by zero or more decimal points
     //followed by zero or more numbers, then repeat after an operator
-    return /^\d+\.*\d*[\+\-\/\*]\d+\.*\d*$/.test(display.textContent);
+    return /^\d+\.?\d*[\+\-\/\*]\d+\.?\d*$/.test(display.textContent);
 }
 
 function evaluate() {
     if(isValid()) {
         //extract two numbers and operator, then operate(a,b,operator)
-        let first = display.textContent.match(/\d+\.*\d*/g)[0];
-        let second = display.textContent.match(/\d+\.*\d*/g)[1];
+        let first = display.textContent.match(/\d+\.?\d*/g)[0];
+        let second = display.textContent.match(/\d+\.?\d*/g)[1];
         let operator = display.textContent.match(/[\+\-\/\*]/)[0];
         result = operate(first,second,operator);
         display.textContent = result;
