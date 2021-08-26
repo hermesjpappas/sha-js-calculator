@@ -64,6 +64,8 @@ clearButton.addEventListener('click', (e) => clear());
 
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
+    //if the result is already calculated, don't add a decimal to it
+    if(calculated) return;
     //if there is a decimal point already in this number, don't add another one
     if(/^\d+\.\d*$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
@@ -74,7 +76,7 @@ dot.addEventListener('click', (e) => {
 });
 
 
-//TO-DO: (Maybe) Implement Clear Entry function and event listener
+//TODO: (Maybe) Implement Clear Entry function and event listener
 
 //checks if the equation on display is valid
 function isValid() {
@@ -91,7 +93,7 @@ function evaluate() {
         let operator = display.textContent.match(/[\+\-\/\*]/)[0];
         result = operate(first,second,operator);
       
-        //if the number has more than two decimal points, shorten it
+        //if result is a float and has more than two decimal points, shorten it
         if(result % 1 !== 0 && String(result).split('.')[1].length > 2) {
             result = result.toFixed(3);
         }
