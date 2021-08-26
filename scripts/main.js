@@ -64,10 +64,8 @@ clearButton.addEventListener('click', (e) => clear());
 
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
-    //if there is a decimal point before, don't add another one
-    if(display.textContent.charAt(display.textContent.length-1)==".") return;
     //if there is a decimal point already in this number, don't add another one
-    if(/^\d+\.\d+$/.test(display.textContent)) return;
+    if(/^\d+\.\d*$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
     //return and also do nothing
     if(/^\d+\.\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
