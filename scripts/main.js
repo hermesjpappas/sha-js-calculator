@@ -11,12 +11,13 @@ function multiply (a, b) {
 }
 
 function divide (a, b) {
+    if(b === 0) {
+        display.textContent = "Don't do that.";
+        calculated = true;
+    }
     return a / b;
 }
 
-//Since we can just return a + b, a - b, etc
-//there is no need for the separate operation functions
-//Maybe simplify?
 
 function operate(a, b, operator) {
     a = parseFloat(a);
@@ -107,6 +108,8 @@ const operators = document.querySelectorAll(".operator");
 
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
+        //if not valid and not a number, don't do anything
+        if(!isValid() && !/^\d+\.?\d*/.test(display.textContent)) return;
         //if there's already a full valid operation on screen, evaluate it
         if(isValid()) evaluate();
         //if it's already calculated from before, keep the result, operate
