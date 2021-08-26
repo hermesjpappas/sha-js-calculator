@@ -86,7 +86,7 @@ dot.addEventListener('click', (e) => {
 
 //TODO: (Maybe) Implement Clear Entry function and event listener
 
-//checks if the equation on display is valid
+//checks if the operation on display is valid
 function isValid() {
     //match one or more numbers followed by zero or more decimal points
     //followed by zero or more numbers, then repeat after an operator
