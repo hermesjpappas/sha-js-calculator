@@ -41,6 +41,7 @@ const display = document.querySelector(".display");
 const nums = document.querySelectorAll(".num");
 let result = "";
 let calculated = false;
+let sound = false;
 
 function clear() {
     result = "";
@@ -132,4 +133,19 @@ equals.addEventListener('click', (e) => evaluate());
 const backspace = document.querySelector(".backspace");
 backspace.addEventListener('click', (e) => {
     display.textContent = display.textContent.slice(0,display.textContent.length-1);
+});
+
+//sound button behavior (only visual for now)
+const soundButton = document.querySelector(".bottom-left");
+soundButton.style.textDecoration = 'line-through';
+
+soundButton.addEventListener('click', (e) => {
+    if(sound) {
+        sound = false;
+        soundButton.style.textDecoration = 'line-through';
+    }
+    else {
+        sound = true;
+        soundButton.style.textDecoration = 'none';
+    }
 });
