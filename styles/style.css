@@ -18,6 +18,7 @@ body {
     text-align: center;
     font-family: 'Monoid Normal';
     font-size: 16px;
+    text-shadow: 5px 5px 5px #111111; 
 }
 
 main {
