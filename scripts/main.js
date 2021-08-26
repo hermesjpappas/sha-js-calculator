@@ -87,13 +87,15 @@ function isValid() {
 function evaluate() {
     if(isValid()) {
         //extract two numbers and operator, then operate(a,b,operator)
-        //and put the result as the display.textContent
-        //then set flag to calculated
+        let first = display.textContent.match(/\d+\.*\d*/g)[0];
+        let second = display.textContent.match(/\d+\.*\d*/g)[1];
+        let operator = display.textContent.match(/[\+\-\/\*]/)[0];
+        result = operate(first,second,operator);
+        display.textContent = result;
+        calculated = true;
     }
 
 }
-
-
 
 const operators = document.querySelectorAll(".operator");
 
@@ -110,4 +112,4 @@ operators.forEach(operator => {
 });
 
 const equals = document.querySelector(".equals");
-equals.addEventListener('click', (e) => evaluate(display.textContent));
+equals.addEventListener('click', (e) => evaluate());
