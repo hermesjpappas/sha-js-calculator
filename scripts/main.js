@@ -61,14 +61,14 @@ clearButton.addEventListener('click', (e) => clear());
 
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
-    //behavior if dots or numbers are before:
-    //if there is a dot right before, don't add another one
+    //if there is a decimal point before, don't add another one
     if(display.textContent.charAt(display.textContent.length-1)==".") return;
     //if there is a decimal point already in this number, don't add another one
     if(/^\d+\.\d+$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
     //return and also do nothing
     if(/^\d+\.*\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
+    //otherwise, just add the decimal point
     display.textContent += ".";
 });
 
