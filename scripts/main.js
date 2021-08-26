@@ -136,6 +136,7 @@ backspace.addEventListener('click', (e) => {
 });
 
 //sound button behavior (only visual for now)
+//TODO: Add sound functionality
 const soundButton = document.querySelector(".bottom-left");
 soundButton.style.textDecoration = 'line-through';
 
