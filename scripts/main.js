@@ -47,6 +47,7 @@ function clear() {
     display.textContent = "";
 }
 
+//numbers behavior
 nums.forEach(num => {
     num.addEventListener('click', (e) => {
         if(calculated) {
@@ -60,9 +61,11 @@ nums.forEach(num => {
     });
 });
 
+//clear button behavior
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener('click', (e) => clear());
 
+//decimal point behavior
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
     //if there is nothing, don't add a decimal point
@@ -88,6 +91,7 @@ function isValid() {
     return /^\d+\.?\d*[\+\-\/\*]\d+\.?\d*$/.test(display.textContent);
 }
 
+//evaluates whatever is on the display
 function evaluate() {
     if(isValid()) {
         //extract two numbers and operator, then operate(a,b,operator)
@@ -106,8 +110,8 @@ function evaluate() {
 
 }
 
+//operators behavior
 const operators = document.querySelectorAll(".operator");
-
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
         //if not valid and not a number, don't do anything
@@ -120,10 +124,11 @@ operators.forEach(operator => {
     });
 });
 
+//equals behavior
 const equals = document.querySelector(".equals");
 equals.addEventListener('click', (e) => evaluate());
 
-
+//backspace behavior
 const backspace = document.querySelector(".backspace");
 backspace.addEventListener('click', (e) => {
     display.textContent = display.textContent.slice(0,display.textContent.length-1);
