@@ -52,6 +52,9 @@ nums.forEach(num => {
             clear();
             calculated = false;
         }
+
+        //TODO: Fix behavior for zero, maybe separately, so it doesn't start
+        //a number unless followed by a decimal point.
         display.textContent += num.textContent;
     });
 });
