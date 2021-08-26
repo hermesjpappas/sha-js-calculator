@@ -115,6 +115,7 @@ function evaluate() {
 const operators = document.querySelectorAll(".operator");
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
+        //TODO: Don't add another operator if an operator is right before it
         //if not valid and not a number, don't do anything
         if(!isValid() && !/^\d+\.?\d*/.test(display.textContent)) return;
         //if there's already a full valid operation on screen, evaluate it
