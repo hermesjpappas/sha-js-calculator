@@ -138,8 +138,7 @@ backspace.addEventListener('click', (e) => {
     display.textContent = display.textContent.slice(0,display.textContent.length-1);
 });
 
-//sound button behavior (only visual for now)
-//TODO: Add sound functionality
+//sound mute / unmute button behavior
 const soundButton = document.querySelector(".bottom-left");
 soundButton.style.textDecoration = 'line-through';
 
@@ -155,10 +154,12 @@ soundButton.addEventListener('click', (e) => {
     }
 });
 
+//button press sound behavior
 const soundButtons = document.querySelectorAll(".s");
 soundButtons.forEach(soundButton => {
     soundButton.addEventListener('click', (e) => {
         if(sound) {
+            //rewind the sound first so it always plays from the top
             document.getElementById("button-beep").currentTime = 0;
             document.getElementById("button-beep").play();
         }
