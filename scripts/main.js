@@ -118,9 +118,12 @@ function evaluate() {
 const operators = document.querySelectorAll(".operator");
 operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
-        //TODO: Don't add another operator if an operator is right before it
         //if not valid and not a number, don't do anything
         if(!isValid() && !/^\d+\.?\d*/.test(display.textContent)) return;
+        //if operator is right before, don't add another operator
+        if(/^\d+\.*\d*[\+\-\/\*]$/.test(display.textContent)) return;
+        //if there is a decimal point right before, don't add an operator
+        if(display.textContent.charAt(display.textContent.length-1) ===".") return;
         //if there's already a full valid operation on screen, evaluate it
         if(isValid()) evaluate();
         //if it's already calculated from before, keep the result, operate
