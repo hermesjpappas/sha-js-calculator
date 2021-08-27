@@ -58,7 +58,7 @@ footer a {
 
 footer a:hover {
     color: #f4f4f4;
-    text-shadow: 5px 5px 5px #111111;
+    text-shadow: 5px 5px 5px black;
 }
 #calc-container {
     display: grid;
@@ -72,12 +72,13 @@ footer a:hover {
     border: solid 4px #f4f4f4;
     border-radius: var(--border-radius);
     margin: -350px 0 0 -250px;
-    box-shadow: 10px 10px 5px #111111;
+    box-shadow: 10px 10px 5px black;
 }
 
 h1 {
     font-size: 3em;
     margin-top: 0.5em;
+    text-shadow: 5px 5px 5px black;
 }
 
 .grid-item {
