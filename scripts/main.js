@@ -20,8 +20,8 @@ function divide (a, b) {
 
 
 function operate(a, b, operator) {
-    a = parseFloat(a);
-    b = parseFloat(b);
+    a = parseFloat(a, 10);
+    b = parseFloat(b, 10);
 
     switch(operator) {
         case "+":
@@ -56,8 +56,6 @@ nums.forEach(num => {
             calculated = false;
         }
 
-        //TODO: Fix behavior for zero, maybe separately, so it doesn't start
-        //a number unless followed by a decimal point.
         display.textContent += num.textContent;
        
     });
