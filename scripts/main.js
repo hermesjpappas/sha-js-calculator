@@ -70,7 +70,6 @@ clearButton.addEventListener('click', (e) => clear());
 //decimal point behavior
 const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => {
-    //TODO: Don't add a decimal point if there is an operator before it
     //if there is nothing, don't add a decimal point
     if(display.textContent === "") return;
     //if the result is already calculated, don't add a decimal to it
@@ -79,7 +78,9 @@ dot.addEventListener('click', (e) => {
     if(/^\d+\.\d*$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
     //return and also do nothing
-    if(/^\d+\.\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
+    if(/^\d+\.*\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
+    //if there is an operator before, don't add a decimal
+    if(/^\d+\.*\d*[\+\-\/\*]$/.test(display.textContent)) return;
     //otherwise, just add the decimal point
     display.textContent += ".";
 });
