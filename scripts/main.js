@@ -149,6 +149,7 @@ function muteBehavior(button) {
      if(sound) {
         sound = false;
         button.style.textDecoration = 'line-through';
+        document.getElementById("blip-r").play();
     }
     else {
         sound = true;
