@@ -59,6 +59,7 @@ nums.forEach(num => {
         //TODO: Fix behavior for zero, maybe separately, so it doesn't start
         //a number unless followed by a decimal point.
         display.textContent += num.textContent;
+       
     });
 });
 
@@ -150,5 +151,16 @@ soundButton.addEventListener('click', (e) => {
     else {
         sound = true;
         soundButton.style.textDecoration = 'none';
+        document.getElementById("blip").play();
     }
+});
+
+const soundButtons = document.querySelectorAll(".s");
+soundButtons.forEach(soundButton => {
+    soundButton.addEventListener('click', (e) => {
+        if(sound) {
+            document.getElementById("button-beep").currentTime = 0;
+            document.getElementById("button-beep").play();
+        }
+    });
 });
