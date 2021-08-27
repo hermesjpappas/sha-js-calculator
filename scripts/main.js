@@ -160,12 +160,13 @@ soundButton.addEventListener('click', (e) => muteBehavior(soundButton));
 
 //button press sound behavior
 const soundButtons = document.querySelectorAll(".s");
-soundButtons.forEach(soundButton => {
-    soundButton.addEventListener('click', (e) => {
-        if(sound) {
+function soundBehavior() {
+      if(sound) {
             //rewind the sound first so it always plays from the top
             document.getElementById("button-beep").currentTime = 0;
             document.getElementById("button-beep").play();
         }
-    });
-});
+}
+
+soundButtons.forEach(soundButton =>
+    soundButton.addEventListener('click', (e) => soundBehavior()));
