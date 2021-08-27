@@ -65,8 +65,7 @@ const clearButton = document.querySelector(".clear");
 clearButton.addEventListener('click', (e) => clear());
 
 //decimal point behavior
-const dot = document.querySelector(".dot");
-dot.addEventListener('click', (e) => {
+function decimalBehavior(decimal) {
     //if there is nothing, don't add a decimal point
     if(display.textContent === "") return;
     //if the result is already calculated, don't add a decimal to it
@@ -80,7 +79,9 @@ dot.addEventListener('click', (e) => {
     if(/^\d+\.*\d*[\+\-\/\*]$/.test(display.textContent)) return;
     //otherwise, just add the decimal point
     display.textContent += ".";
-});
+}
+const dot = document.querySelector(".dot");
+dot.addEventListener('click', (e) => decimalBehavior(dot));
 
 
 //TODO: (Maybe) Implement Clear Entry function and event listener
