@@ -143,7 +143,7 @@ backspace.addEventListener('click', (e) => {
 });
 
 //sound mute / unmute button behavior
-const soundButton = document.querySelector(".bottom-left");
+const soundButton = document.querySelector(".sound");
 soundButton.style.textDecoration = 'line-through';
 
 soundButton.addEventListener('click', (e) => {
