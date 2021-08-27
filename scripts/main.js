@@ -49,17 +49,16 @@ function clear() {
 }
 
 //numbers behavior
-nums.forEach(num => {
-    num.addEventListener('click', (e) => {
-        if(calculated) {
-            clear();
-            calculated = false;
-        }
+function numsBehavior(num) {
+    if(calculated) {
+        clear();
+        calculated = false;
+    }
 
-        display.textContent += num.textContent;
-       
-    });
-});
+    display.textContent += num.textContent;
+}
+
+nums.forEach(num => num.addEventListener('click', (e) => numsBehavior(num)));
 
 //clear button behavior
 const clearButton = document.querySelector(".clear");
