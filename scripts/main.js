@@ -28,9 +28,9 @@ function operate(a, b, operator) {
             return add(a, b);
         case "-":
             return subtract(a, b);
-        case "*":
+        case "×":
             return multiply(a, b);
-        case "/":
+        case "÷":
             return divide(a, b);
         default:
             break;
@@ -74,9 +74,9 @@ function decimalBehavior(decimal) {
     if(/^\d+\.\d*$/.test(display.textContent)) return;
     //if there is a number, then an operator, then another number with a decimal
     //return and also do nothing
-    if(/^\d+\.*\d*[\+\-\/\*]\d+\.\d*$/.test(display.textContent)) return;
+    if(/^\d+\.*\d*[\+\-\u00F7\u00D7]\d+\.\d*$/.test(display.textContent)) return;
     //if there is an operator before, don't add a decimal
-    if(/^\d+\.*\d*[\+\-\/\*]$/.test(display.textContent)) return;
+    if(/^\d+\.*\d*[\+\-\u00F7\u00D7]$/.test(display.textContent)) return;
     //otherwise, just add the decimal point
     display.textContent += ".";
 }
@@ -90,7 +90,7 @@ dot.addEventListener('click', (e) => decimalBehavior(dot));
 function isValid() {
     //match one or more numbers followed by zero or more decimal points
     //followed by zero or more numbers, then repeat after an operator
-    return /^\d+\.?\d*[\+\-\/\*]\d+\.?\d*$/.test(display.textContent);
+    return /^\d+\.?\d*[\+\-\u00F7\u00D7]\d+\.?\d*$/.test(display.textContent);
 }
 
 //evaluates whatever is on the display
@@ -99,7 +99,7 @@ function evaluate() {
         //extract two numbers and operator, then operate(a,b,operator)
         let first = display.textContent.match(/\d+\.?\d*/g)[0];
         let second = display.textContent.match(/\d+\.?\d*/g)[1];
-        let operator = display.textContent.match(/[\+\-\/\*]/)[0];
+        let operator = display.textContent.match(/[\+\-\u00F7\u00D7]/)[0];
         result = operate(first,second,operator);
       
         //if result is a float and has more than two decimal points, shorten it
@@ -117,7 +117,7 @@ function operatorsBehavior(oper) {
         //if not valid and not a number, don't do anything
         if(!isValid() && !/^\d+\.?\d*/.test(display.textContent)) return;
         //if operator is right before, don't add another operator
-        if(/^\d+\.*\d*[\+\-\/\*]$/.test(display.textContent)) return;
+        if(/^\d+\.*\d*[\+\-\u00F7\u00D7]$/.test(display.textContent)) return;
         //if there is a decimal point right before, don't add an operator
         if(display.textContent.charAt(display.textContent.length-1) ===".") return;
         //if there's already a full valid operation on screen, evaluate it
