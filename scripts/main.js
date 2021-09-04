@@ -84,8 +84,6 @@ const dot = document.querySelector(".dot");
 dot.addEventListener('click', (e) => decimalBehavior(dot));
 
 
-//TODO: (Maybe) Implement Clear Entry function and event listener
-
 //checks if the operation on display is valid
 function isValid() {
     //match one or more numbers followed by zero or more decimal points

@@ -118,3 +118,12 @@ h1 {
 .bottom-right {
     border-bottom-right-radius: var(--border-radius);
 }
+
+.star {
+    color:#666666;
+    text-shadow: none;
+    font-size: 3em;
+    font-weight: bold;
+    padding-left: 0.1em;
+    cursor: initial;
+}
