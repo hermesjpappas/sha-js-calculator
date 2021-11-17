@@ -1,4 +1,4 @@
-# JavaScript Calculator+
+# JavaScript Calculator
 <img src="images/calc.png"/>
 
 ## Welcome to the calculator of your dreams!
