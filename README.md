@@ -8,6 +8,7 @@
 
 ## Instructions:
 <p>Click the buttons with your mouse to get your result. Click the sound/note button to get some retro bleeps.</p>
+[Try it out!](https://hjp-calc.netlify.app/)
 
 ## Issues / TO-DO:
 <p>Keyboard input currently not enabled. 
